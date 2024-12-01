@@ -1,4 +1,4 @@
-import {NextResponse} from 'next/server'
+import {NextRequest, NextResponse} from 'next/server'
 import { prisma } from '@/lib/prisma'
 
 export const GET = async (req: Request, res: NextResponse) => {
@@ -13,7 +13,7 @@ export const GET = async (req: Request, res: NextResponse) => {
   }
 }
 
-export const POST = async (req: Response) => {
+export const POST = async (req: NextRequest) => {
   try {
     const body = await req.json()
 
